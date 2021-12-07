@@ -34,7 +34,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 // Route Middlewares
-require("./src/routes/user.routes.js")(app);
+require("./src/routes/routes.js")(app);
 
 //req.isAuthenticated is provided from the auth router
 // app.get('/', (req, res) => {

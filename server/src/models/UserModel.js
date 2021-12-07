@@ -17,7 +17,7 @@ User.create = (newUser, result) => {
         console.log(`res: ${JSON.stringify(res)}`);
         if(error){
             console.log("error: ", error);
-            result(err, null);
+            result(error, null);
             return;
         }
 
@@ -33,7 +33,7 @@ User.getAll = result => {
         console.log(`res: ${JSON.stringify(res)}`);
         if(error){
             console.log("error: ", error);
-            result(null, err);
+            result(error, null);
             return;
         }
         console.log("getAll: ", res);
@@ -48,7 +48,7 @@ User.findById = (userid, result) => {
         console.log(`res: ${JSON.stringify(res)}`);
         if(error){
             console.log("error: ", error);
-            result(null, err);
+            result(error, null);
             return;
         }
 
@@ -61,7 +61,7 @@ User.remove = (userid, result) => {
     sql.query(`DELETE FROM user where user_id = ${userid}`, (error,result) => {
         if (error){
             console.log("error: ", error);
-            result(null, error);
+            result(error, null);
             return;
         }
 
